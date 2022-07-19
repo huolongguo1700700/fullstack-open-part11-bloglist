@@ -36,9 +36,6 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "bloglist-deployment"
           heroku_email: "e1700700@edu.vamk.fi"
-          healthcheck: https://bloglist-deployment.herokuapp.com/health
-          checkString: "ok"
-          rollbackonhealthcheckfailed: true
         env:
           HD_MONGODB_URI: ${{ secrets.MONGODB_URI }}
           HD_SECRET: ${{ secrets.SECRET }}
