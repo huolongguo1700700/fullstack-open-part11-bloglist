@@ -3,12 +3,20 @@ module.exports = {
     'browser': true,
     'commonjs': true,
     'es2021': true,
-    'jest': true
+    'jest/globals': true,
+    'cypress/globals': true
   },
-  'extends': 'eslint:recommended',
+  'extends': ['eslint:recommended', 'plugin:react/recommended'],
   'parserOptions': {
-    'ecmaVersion': 'latest'
+    'ecmaFeatures': {
+      'jsx': true
+    },
+    'ecmaVersion': 2018,
+    'sourceType': 'module'
   },
+  'plugins': [
+    'react', 'jest', 'cypress'
+  ],
   'rules': {
     'indent': [
       'error',
@@ -35,6 +43,12 @@ module.exports = {
       'error', { 'before': true, 'after': true }
     ],
     'no-console': 0,
-    'no-undef': 0
+    'react/display-name': 0,
+    'react/prop-types': 0
+  },
+  'settings': {
+    'react': {
+      'version': 'detect'
+    }
   }
 }

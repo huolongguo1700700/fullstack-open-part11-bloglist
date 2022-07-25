@@ -22,11 +22,11 @@ jobs:
         with:
           node-version: '16'
       - name: npm install
-        run: npm install && cd client && npm install
+        run: npm install
       - name: lint
-        run: npm run lint && cd client && npm run eslint
+        run: npm run lint
       - name: build
-        run: cd client && npm run build
+        run: npm run build
       - name: test
         run: npm run test
       - name: deploy with heroku

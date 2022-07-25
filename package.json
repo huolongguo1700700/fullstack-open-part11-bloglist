@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node index.js",
+    "start": "webpack-dev-server --open --mode development",
+    "start:prod": "node index.js",
     "dev": "cross-env NODE_ENV=development nodemon index.js",
     "test": "cross-env NODE_ENV=test jest --verbose --runInBand --forceExit",
     "logs:prod": "heroku logs --tail",
     "lint": "eslint .",
-    "start:test": "cross-env NODE_ENV=test node index.js"
+    "start:test": "cross-env NODE_ENV=test node index.js",
+    "build": "webpack --mode production"
   },
   "author": "",
   "license": "ISC",
@@ -23,13 +25,37 @@
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
     "mongoose": "^6.3.8",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "@testing-library/user-event": "^14.1.1",
+    "axios": "^0.27.2",
+    "prop-types": "^15.8.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
   },
   "devDependencies": {
     "eslint": "^8.17.0",
     "jest": "^28.1.1",
     "nodemon": "^2.0.16",
-    "supertest": "^6.2.3"
+    "supertest": "^6.2.3",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0",
+    "babel-jest": "^25.5.1",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.5.3",
+    "style-loader": "^1.2.1",
+    "@babel/eslint-parser": "^7.18.2",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "cypress": "^10.2.0",
+    "eslint-plugin-cypress": "^2.12.1",
+    "eslint-plugin-jest": "^26.5.3",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4"
   },
   "jest": {
     "testEnvironment": "node",
