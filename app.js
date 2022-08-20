@@ -26,6 +26,10 @@ app.use(express.json())
 app.use(middleware.tokenExtractor)
 app.use(middleware.requestLogger)
 
+app.get('/health', (req, res) => {
+  res.send('ok')
+})
+
 app.use('/api/blogs', blogRouter)
 app.use('/api/users', userRouter)
 app.use('/api/login', loginRouter)
