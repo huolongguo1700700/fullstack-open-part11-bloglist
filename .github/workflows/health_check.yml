@@ -9,7 +9,7 @@ on:
 
 jobs:
   perodic_health_check:
-    runs-on: ubutun-18.04
+    runs-on: ubuntu-latest
     steps:
     - name: Check the deployed service URL
       uses: jtalk/url-health-check-action@v2
